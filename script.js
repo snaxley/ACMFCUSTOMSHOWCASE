@@ -186,7 +186,7 @@ function main() {
 
             if (pants) {
                 for (const coordinates of pantsDrawingCoordinates) {
-                    const { sx, sy, sw, sh = 128, dx, dy, dw, dh = 128 } = coordinates;
+                    const { sx, sy, sw, sh = 128, dx, dy + 30, dw, dh = 128 } = coordinates;
                     ctx.drawImage(pants, sx, sy, sw, sh, dx, dy, dw, dh);
                 }
             }
