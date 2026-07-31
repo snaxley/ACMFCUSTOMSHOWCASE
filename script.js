@@ -135,37 +135,37 @@ function main() {
 
     const skinDrawingCoordinates = [
         {
-            x: 10,
+            x: -54,
             y: 48, // raised by 38px (86 -> 48) to match shirt/arms
             w: 64,
             h: 256,
         },
         {
-            x: 156,
+            x: 92,
             y: 48, // raised by 38px
             w: 256,
             h: 128,
         },
         {
-            x: 156, // shifted left 64px (220 -> 156) for front leg
+            x: 92, // shifted left 64px (220 -> 156 -> 92) for front leg
             y: 48, // raised by 38px
             w: 128,
             h: 256,
         },
         {
-            x: 422,
+            x: 358,
             y: 48, // raised by 38px
             w: 256,
             h: 128,
         },
         {
-            x: 422, // shifted left 64px (486 -> 422) for back leg
+            x: 358, // shifted left 64px (486 -> 422 -> 358) for back leg
             y: 48, // raised by 38px
             w: 128,
             h: 256,
         },
         {
-            x: 632,
+            x: 568,
             y: 48, // raised by 38px
             w: 64,
             h: 256,
