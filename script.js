@@ -2,28 +2,30 @@ function main() {
     // SHIRTS: Shifted down 30 pixels (Baseline dy is now 48). 
     // You can now freely change any "dx" to push pieces left or right without structural breaks!
     // SHIRTS: Re-mapped to drop perfectly into the 4 presentation boxes (RIGHT, FRONT, BACK, LEFT)
+// SHIRTS: Kept your perfect placement but cleaned up sizes
 const shirtDrawingCoordinates = [
-    { sx: 151, sy: 355, sw: 64,  dw: 64,  dx: 45,  dy: 82  }, // Box 1: RIGHT
-    { sx: 231, sy: 74,  sw: 128, dw: 128, dx: 172, dy: 82  }, // Box 2: FRONT
-    { sx: 427, sy: 74,  sw: 128, dw: 128, dx: 404, dy: 82  }, // Box 3: BACK
-    { sx: 85,  sy: 355, sw: 64,  dw: 64,  dx: 595, dy: 82  }  // Box 4: LEFT
+    { sx: 151, sy: 355, sw: 64,  dw: 64,  dx: 45,  dy: 82  }, // RIGHT
+    { sx: 231, sy: 74,  sw: 128, dw: 128, dx: 172, dy: 82  }, // FRONT
+    { sx: 427, sy: 74,  sw: 128, dw: 128, dx: 404, dy: 82  }, // BACK
+    { sx: 85,  sy: 355, sw: 64,  dw: 64,  dx: 595, dy: 82  }  // LEFT
 ];
 
-// PANTS: Shifted relative to the shirts to connect seamlessly inside the display frames
+// PANTS: FIXED - Changed dw to 64 and centered dx under the shirt blocks
 const pantsDrawingCoordinates = [
-    { sx: 151, sy: 355, sw: 64,  dw: 64,  dx: 45,  dy: 146 }, // Under Box 1
-    { sx: 217, sy: 355, sw: 64,  dw: 128, dx: 172, dy: 146 }, // Under Box 2
-    { sx: 308, sy: 355, sw: 64,  dw: 128, dx: 404, dy: 146 }, // Under Box 3
-    { sx: 374, sy: 355, sw: 64,  dw: 64,  dx: 595, dy: 146 }  // Under Box 4
+    { sx: 151, sy: 355, sw: 64,  dw: 64,  dx: 45,  dy: 146 }, // RIGHT leg
+    { sx: 217, sy: 355, sw: 64,  dw: 64,  dx: 204, dy: 146 }, // FRONT leg (Centered: 172 + 32)
+    { sx: 308, sy: 355, sw: 64,  dw: 64,  dx: 436, dy: 146 }, // BACK leg  (Centered: 404 + 32)
+    { sx: 374, sy: 355, sw: 64,  dw: 64,  dx: 595, dy: 146 }  // LEFT leg
 ];
 
-// SKIN BACKGROUND: Adjusted boundaries to restrict color spill within the frames
+// SKIN BACKGROUND: Adjusted to sit perfectly under the crisp new layout bounding frames
 const skinDrawingCoordinates = [
-    { x: 45,  y: 82, w: 64,  h: 192 }, // RIGHT slot bounding box
-    { x: 172, y: 82, w: 128, h: 192 }, // FRONT slot bounding box
-    { x: 404, y: 82, w: 128, h: 192 }, // BACK slot bounding box
-    { x: 595, y: 82, w: 64,  h: 192 }  // LEFT slot bounding box
+    { x: 45,  y: 82, w: 64,  h: 192 }, // RIGHT
+    { x: 172, y: 82, w: 128, h: 192 }, // FRONT
+    { x: 404, y: 82, w: 128, h: 192 }, // BACK
+    { x: 595, y: 82, w: 64,  h: 192 }  // LEFT
 ];
+
 
 
     function createShowcase() {
