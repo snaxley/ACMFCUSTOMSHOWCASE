@@ -12,16 +12,16 @@ function main() {
             sx: 231,
             sy: 74,
             sw: 128,
-            dx: 156,
-            dy: 48,
+            dx: 172, // moved right by 16px from 156
+            dy: 60,  // moved down by 12px from 48
             dw: 128,
         },
         {
             sx: 217,
             sy: 355,
             sw: 64,
-            dx: 92,
-            dy: 48,
+            dx: 104, // moved right by 12px from 92
+            dy: 60,  // moved down by 12px from 48
             dw: 64,
         },
         {
