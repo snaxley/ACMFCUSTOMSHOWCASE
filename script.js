@@ -12,7 +12,7 @@ function main() {
             sx: 231,
             sy: 74,
             sw: 128,
-            dx: 92, // moved right by 16px from 156
+            dx: 156, // moved right by 16px from 156
             dy: 48,  // moved down by 12px from 48
             dw: 128,
         },
@@ -20,7 +20,7 @@ function main() {
             sx: 217,
             sy: 355,
             sw: 64,
-            dx: 156, // moved right by 12px from 92
+            dx: 92, // moved right by 12px from 92
             dy: 48,  // moved down by 12px from 48
             dw: 64,
         },
