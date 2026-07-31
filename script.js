@@ -147,7 +147,7 @@ function main() {
             h: 128,
         },
         {
-            x: 92, // shifted left 64px (220 -> 156 -> 92) for front leg
+            x: 156, // shifted left 64px (220 -> 156 -> 92) for front leg
             y: 48, // raised by 38px
             w: 128,
             h: 256,
@@ -159,13 +159,13 @@ function main() {
             h: 128,
         },
         {
-            x: 358, // shifted left 64px (486 -> 422 -> 358) for back leg
+            x: 486, // shifted left 64px (486 -> 422 -> 358) for back leg
             y: 48, // raised by 38px
             w: 128,
             h: 256,
         },
         {
-            x: 568,
+            x: 696,
             y: 48, // raised by 38px
             w: 64,
             h: 256,
