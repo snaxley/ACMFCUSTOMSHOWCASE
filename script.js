@@ -192,7 +192,7 @@ function main() {
             }
             if (shirt) {
                 for (const coordinates of shirtDrawingCoordinates) {
-                    const { sx, sy, sw, sh = 128, dx, dy = 66, dw, dh = 128 } = coordinates;
+                    const { sx, sy, sw, sh = 128, dx, dy = 48, dw, dh = 128 } = coordinates;
                     ctx.drawImage(shirt, sx, sy, sw, sh, dx, dy, dw, dh);
                 }
             }
