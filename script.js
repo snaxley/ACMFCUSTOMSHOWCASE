@@ -172,31 +172,39 @@ function main() {
         showcaseTemplate.onload = () => ctx.drawImage(showcaseTemplate, 0, 0);
 
         function generateShowcase() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.drawImage(showcaseTemplate, 0, 0);
-            const { shirt, pants, colorValue: skinColor } = settings;
-            // DRAWS SKIN COLOR
-            if (shirt || pants) {
-                ctx.fillStyle = skinColor;
-                for (const coordinates of skinDrawingCoordinates) {
-                    const { x, y, w, h } = coordinates;
-                    ctx.fillRect(x, y, w, h);
-                }
-            }
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(showcaseTemplate, 0, 0);
+    const { shirt, pants, colorValue: skinColor } = settings;
 
-            if (pants) {
-                for (const coordinates of pantsDrawingCoordinates) {
-                    const { sx, sy, sw, sh = 128, dx, dy, dw, dh = 128 } = coordinates;
-                    ctx.drawImage(pants, sx, sy, sw, sh, dx, dy, dw, dh);
-                }
-            }
-            if (shirt) {
-                for (const coordinates of shirtDrawingCoordinates) {
-                    const { sx, sy, sw, sh = 128, dx, dy = 18, dw, dh = 128 } = coordinates;
-                    ctx.drawImage(shirt, sx, sy, sw, sh, dx, dy, dw, dh);
-                }
-            }
+    const Y_OFFSET = 30; // move everything drawn below the template down 4 pixels
+
+    ctx.save();
+    ctx.translate(0, Y_OFFSET);
+
+    // DRAWS SKIN COLOR
+    if (shirt || pants) {
+        ctx.fillStyle = skinColor;
+        for (const coordinates of skinDrawingCoordinates) {
+            const { x, y, w, h } = coordinates;
+            ctx.fillRect(x, y, w, h);
         }
+    }
+
+    if (pants) {
+        for (const coordinates of pantsDrawingCoordinates) {
+            const { sx, sy, sw, sh = 128, dx, dy, dw, dh = 128 } = coordinates;
+            ctx.drawImage(pants, sx, sy, sw, sh, dx, dy, dw, dh);
+        }
+    }
+    if (shirt) {
+        for (const coordinates of shirtDrawingCoordinates) {
+            const { sx, sy, sw, sh = 128, dx, dy = 18, dw, dh = 128 } = coordinates;
+            ctx.drawImage(shirt, sx, sy, sw, sh, dx, dy, dw, dh);
+        }
+    }
+
+    ctx.restore();
+}
 
         return {
             canvas,
