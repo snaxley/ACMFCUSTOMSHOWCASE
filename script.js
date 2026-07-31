@@ -9,7 +9,7 @@ function main() {
             dw: 64,
         },
         {
-            sx: 217,
+            sx: 231,
             sy: 74,
             sw: 128,
             dx: 156,
@@ -17,7 +17,7 @@ function main() {
             dw: 128,
         },
         {
-            sx: 231,
+            sx: 217,
             sy: 355,
             sw: 64,
             dx: 92,
