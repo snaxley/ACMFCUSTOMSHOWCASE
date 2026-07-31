@@ -173,14 +173,15 @@ function main() {
 
         function generateShowcase() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.save();
+    ctx.translate(0, Y_OFFSET);
+            
     ctx.drawImage(showcaseTemplate, 0, 0);
     const { shirt, pants, colorValue: skinColor } = settings;
 
     const Y_OFFSET = 30; // move everything drawn below the template down 4 pixels
-
-    ctx.save();
-    ctx.translate(0, Y_OFFSET);
-
+            
     // DRAWS SKIN COLOR
     if (shirt || pants) {
         ctx.fillStyle = skinColor;
