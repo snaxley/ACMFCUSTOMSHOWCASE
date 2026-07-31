@@ -12,16 +12,16 @@ function main() {
             sx: 231,
             sy: 74,
             sw: 128,
-            dx: 156, // moved right by 16px from 156
-            dy: 48,  // moved down by 12px from 48
+            dx: 156, // restored torso x to 156
+            dy: 48,  // restored height to 48
             dw: 128,
         },
         {
             sx: 217,
             sy: 355,
             sw: 64,
-            dx: 92, // moved right by 12px from 92
-            dy: 48,  // moved down by 12px from 48
+            dx: 92, // restored arm x to 92
+            dy: 48,  // restored height to 48
             dw: 64,
         },
         {
@@ -72,7 +72,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 51,
-            dy: 244, // moved down 30px from 214
+            dy: 214, // restored to 214 to match shirt
             dw: 64,
         },
         {
@@ -80,7 +80,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 180,
-            dy: 244, // moved down 30px
+            dy: 214, // restored to 214
             dw: 64,
         },
         {
@@ -88,7 +88,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 244,
-            dy: 244, // moved down 30px
+            dy: 214, // restored to 214
             dw: 64,
         },
         {
@@ -96,7 +96,7 @@ function main() {
             sy: 74,
             sw: 128,
             dx: 180,
-            dy: 116, // moved down 30px from 86
+            dy: 86, // restored to 86 to match shirt
             dw: 128,
         },
         {
@@ -104,7 +104,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 437,
-            dy: 244, // moved down 30px
+            dy: 214, // restored to 214
             dw: 64,
         },
         {
@@ -112,7 +112,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 501,
-            dy: 244, // moved down 30px
+            dy: 214, // restored to 214
             dw: 64,
         },
         {
@@ -120,7 +120,7 @@ function main() {
             sy: 74,
             sw: 128,
             dx: 437,
-            dy: 116, // moved down 30px
+            dy: 86, // restored to 86
             dw: 128,
         },
         {
@@ -128,7 +128,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 630,
-            dy: 244, // moved down 30px
+            dy: 214, // restored to 214
             dw: 64,
         },
     ];
@@ -136,37 +136,37 @@ function main() {
     const skinDrawingCoordinates = [
         {
             x: 51,
-            y: 116, // moved down 30px from 86
+            y: 86, // restored to 86 to match shirt
             w: 64,
             h: 256,
         },
         {
             x: 116,
-            y: 116, // moved down 30px
+            y: 86, // restored to 86
             w: 256,
             h: 128,
         },
         {
             x: 180,
-            y: 116, // moved down 30px
+            y: 86, // restored to 86
             w: 128,
             h: 256,
         },
         {
             x: 373,
-            y: 116, // moved down 30px
+            y: 86, // restored to 86
             w: 256,
             h: 128,
         },
         {
             x: 437,
-            y: 116, // moved down 30px
+            y: 86, // restored to 86
             w: 128,
             h: 256,
         },
         {
             x: 630,
-            y: 116, // moved down 30px
+            y: 86, // restored to 86
             w: 64,
             h: 256,
         },
