@@ -165,7 +165,7 @@ function main() {
     ];
 
     // Offset for drawing content only (not template)
-    const Y_OFFSET = 48; // move shirt, pants, and skin down 48 pixels
+    const DEFAULT_Y_OFFSET = 48; // move shirt, pants, and skin down 48 pixels
     const X_OFFSET_DEFAULT = 0;
 
     function createShowcase() {
@@ -207,7 +207,15 @@ function main() {
 
                 // Save state before translating for shirt/pants/skin
                 ctx.save();
-                ctx.translate(settings.xOffset, Y_OFFSET);
+                // translate according to user controlled offsets (allows aligning the output inside the template)
+                ctx.translate(settings.xOffset, settings.yOffset);
+
+                // OPTIONAL: Clip drawing to the template area so the output can't draw outside the visible showcase.
+                // If your template has a known inner area where the body should be drawn, set these values to match it.
+                // For now we'll clip to the whole canvas; you can narrow these values to the template's inner rect later.
+                ctx.beginPath();
+                ctx.rect(0, 0, canvas.width, canvas.height);
+                ctx.clip();
 
                 // DRAWS SKIN COLOR (use a safe default if no color chosen)
                 if (shirt || pants) {
@@ -257,6 +265,8 @@ function main() {
                 }:`;
                 settingDisplay.innerText = settingDisplay.innerText + ` ${fileName}`;
             }
+            // redraw when a file is set so the user sees the result immediately
+            try { showcase.generateShowcase(); } catch (e) {}
         }
 
         return {
@@ -264,6 +274,7 @@ function main() {
             pants: undefined,
             colorValue: '',
             xOffset: X_OFFSET_DEFAULT,
+            yOffset: DEFAULT_Y_OFFSET,
             setSettingFile,
         };
     }
@@ -284,7 +295,8 @@ function main() {
     async function getFileUpload() {
         const fileInput = document.createElement('input');
         fileInput.type = 'file';
-        fileInput.accept = 'image/PNG';
+        // make accept case-insensitive and allow common image types
+        fileInput.accept = 'image/png,image/jpeg,image/*';
         fileInput.click();
         return new Promise(resolve => {
             fileInput.onchange = () => {
@@ -301,9 +313,12 @@ function main() {
 
     function listenForColorInput() {
         const colorInput = document.querySelector('[colorInput]');
-        colorInput.onchange = () => {
-            settings.colorValue = colorInput.value;
-        };
+        if (colorInput) {
+            colorInput.onchange = () => {
+                settings.colorValue = colorInput.value;
+                showcase.generateShowcase();
+            };
+        }
     }
 
     function listenForXOffsetInput() {
@@ -316,15 +331,26 @@ function main() {
         }
     }
 
+    function listenForYOffsetInput() {
+        const yOffsetInput = document.querySelector('[yOffsetInput]');
+        if (yOffsetInput) {
+            yOffsetInput.addEventListener('input', () => {
+                settings.yOffset = parseInt(yOffsetInput.value, 10) || 0;
+                showcase.generateShowcase();
+            });
+        }
+    }
+
     function listenForGenerate() {
         const generateButton = document.querySelector('[generateButton]');
-        generateButton.addEventListener('click', () => showcase.generateShowcase());
+        if (generateButton) generateButton.addEventListener('click', () => showcase.generateShowcase());
     }
 
     function listenForInputs() {
         listenForFileUpload();
         listenForColorInput();
         listenForXOffsetInput();
+        listenForYOffsetInput();
         listenForGenerate();
     }
 
