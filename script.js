@@ -1,9 +1,4 @@
 function main() {
-    // SHIRTS: Shifted down 30 pixels (Baseline dy is now 48). 
-    // You can now freely change any "dx" to push pieces left or right without structural breaks!
-    // SHIRTS: Re-mapped to drop perfectly into the 4 presentation boxes (RIGHT, FRONT, BACK, LEFT)
-// SHIRTS: Kept your perfect placement but cleaned up sizes
-function main() {
     const shirtDrawingCoordinates = [
         {
             sx: 151,
@@ -169,8 +164,6 @@ function main() {
         },
     ];
 
-
-
     function createShowcase() {
         const canvas = document.querySelector('canvas');
         const ctx = canvas.getContext('2d');
@@ -182,46 +175,25 @@ function main() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.drawImage(showcaseTemplate, 0, 0);
             const { shirt, pants, colorValue: skinColor } = settings;
-            
-            // 1. DRAWS SKIN BACKGROUND
+            // DRAWS SKIN COLOR
             if (shirt || pants) {
-                ctx.fillStyle = skinColor || 'transparent';
+                ctx.fillStyle = skinColor;
                 for (const coordinates of skinDrawingCoordinates) {
-                    ctx.fillRect(coordinates.x, coordinates.y, coordinates.w, coordinates.h);
+                    const { x, y, w, h } = coordinates;
+                    ctx.fillRect(x, y, w, h);
                 }
             }
 
-            // 2. DRAWS PANTS (Direct references fix layout freezing bugs)
             if (pants) {
-                for (const coord of pantsDrawingCoordinates) {
-                    ctx.drawImage(
-                        pants, 
-                        coord.sx, 
-                        coord.sy, 
-                        coord.sw, 
-                        128, 
-                        coord.dx, 
-                        coord.dy, 
-                        coord.dw, 
-                        128
-                    );
+                for (const coordinates of pantsDrawingCoordinates) {
+                    const { sx, sy, sw, sh = 128, dx, dy, dw, dh = 128 } = coordinates;
+                    ctx.drawImage(pants, sx, sy, sw, sh, dx, dy, dw, dh);
                 }
             }
-            
-            // 3. DRAWS SHIRTS (Direct references fix layout freezing bugs)
             if (shirt) {
-                for (const coord of shirtDrawingCoordinates) {
-                    ctx.drawImage(
-                        shirt, 
-                        coord.sx, 
-                        coord.sy, 
-                        coord.sw, 
-                        128, 
-                        coord.dx, 
-                        coord.dy, 
-                        coord.dw, 
-                        128
-                    );
+                for (const coordinates of shirtDrawingCoordinates) {
+                    const { sx, sy, sw, sh = 128, dx, dy = 18, dw, dh = 128 } = coordinates;
+                    ctx.drawImage(shirt, sx, sy, sw, sh, dx, dy, dw, dh);
                 }
             }
         }
@@ -286,18 +258,14 @@ function main() {
 
     function listenForColorInput() {
         const colorInput = document.querySelector('[colorInput]');
-        if (colorInput) {
-            colorInput.onchange = () => {
-                settings.colorValue = colorInput.value;
-            };
-        }
+        colorInput.onchange = () => {
+            settings.colorValue = colorInput.value;
+        };
     }
 
     function listenForGenerate() {
         const generateButton = document.querySelector('[generateButton]');
-        if (generateButton) {
-            generateButton.addEventListener('click', () => showcase.generateShowcase());
-        }
+        generateButton.addEventListener('click', () => showcase.generateShowcase());
     }
 
     function listenForInputs() {
