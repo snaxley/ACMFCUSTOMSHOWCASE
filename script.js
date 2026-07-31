@@ -6,7 +6,7 @@ function main() {
             sw: 64,
             dx: 31,
             dw: 64,
-            dy: 20,
+            dy: 50,
         },
         {
             sx: 231,
@@ -14,7 +14,7 @@ function main() {
             sw: 128,
             dx: 160,
             dw: 128,
-            dy: 20,
+            dy: 50,
         },
         {
             sx: 217,
@@ -22,7 +22,7 @@ function main() {
             sw: 64,
             dx: 96,
             dw: 64,
-            dy: 20,
+            dy: 50,
         },
         {
             sx: 308,
@@ -30,7 +30,7 @@ function main() {
             sw: 64,
             dx: 288,
             dw: 64,
-            dy: 20,
+            dy: 50,
         },
         {
             sx: 440,
@@ -38,7 +38,7 @@ function main() {
             sw: 64,
             dx: 353,
             dw: 64,
-            dy: 20,
+            dy: 50,
         },
         {
             sx: 427,
@@ -46,7 +46,7 @@ function main() {
             sw: 128,
             dx: 417,
             dw: 128,
-            dy: 20,
+            dy: 50,
         },
         {
             sx: 85,
@@ -54,7 +54,7 @@ function main() {
             sw: 64,
             dx: 545,
             dw: 64,
-            dy: 20,
+            dy: 50,
         },
         {
             sx: 374,
@@ -62,7 +62,7 @@ function main() {
             sw: 64,
             dx: 610,
             dw: 64,
-            dy: 20,
+            dy: 50,
         },
     ];
 
@@ -72,7 +72,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 31,
-            dy: 166,
+            dy: 196,
             dw: 64,
         },
         {
@@ -80,7 +80,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 160,
-            dy: 166,
+            dy: 196,
             dw: 64,
         },
         {
@@ -88,7 +88,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 224,
-            dy: 166,
+            dy: 196,
             dw: 64,
         },
         {
@@ -96,7 +96,7 @@ function main() {
             sy: 74,
             sw: 128,
             dx: 160,
-            dy: 38,
+            dy: 68,
             dw: 128,
         },
         {
@@ -104,7 +104,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 417,
-            dy: 166,
+            dy: 196,
             dw: 64,
         },
         {
@@ -112,7 +112,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 481,
-            dy: 166,
+            dy: 196,
             dw: 64,
         },
         {
@@ -120,7 +120,7 @@ function main() {
             sy: 74,
             sw: 128,
             dx: 417,
-            dy: 38,
+            dy: 68,
             dw: 128,
         },
         {
@@ -128,7 +128,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 610,
-            dy: 166,
+            dy: 196,
             dw: 64,
         },
     ];
