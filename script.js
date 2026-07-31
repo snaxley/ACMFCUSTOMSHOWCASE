@@ -135,19 +135,19 @@ function main() {
 
     const skinDrawingCoordinates = [
         {
-            x: -54,
+            x: 10,
             y: 48, // raised by 38px (86 -> 48) to match shirt/arms
             w: 64,
             h: 256,
         },
         {
-            x: 92,
+            x: 96,
             y: 48, // raised by 38px
             w: 256,
             h: 128,
         },
         {
-            x: 358, // changed per request
+            x: 156, // changed per request
             y: 48, // raised by 38px
             w: 128,
             h: 256,
