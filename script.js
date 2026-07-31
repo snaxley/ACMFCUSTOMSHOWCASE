@@ -72,7 +72,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 51,
-            dy: 214,
+            dy: 244, // moved down 30px from 214
             dw: 64,
         },
         {
@@ -80,7 +80,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 180,
-            dy: 214,
+            dy: 244, // moved down 30px
             dw: 64,
         },
         {
@@ -88,7 +88,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 244,
-            dy: 214,
+            dy: 244, // moved down 30px
             dw: 64,
         },
         {
@@ -96,7 +96,7 @@ function main() {
             sy: 74,
             sw: 128,
             dx: 180,
-            dy: 86,
+            dy: 116, // moved down 30px from 86
             dw: 128,
         },
         {
@@ -104,7 +104,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 437,
-            dy: 214,
+            dy: 244, // moved down 30px
             dw: 64,
         },
         {
@@ -112,7 +112,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 501,
-            dy: 214,
+            dy: 244, // moved down 30px
             dw: 64,
         },
         {
@@ -120,7 +120,7 @@ function main() {
             sy: 74,
             sw: 128,
             dx: 437,
-            dy: 86,
+            dy: 116, // moved down 30px
             dw: 128,
         },
         {
@@ -128,7 +128,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 630,
-            dy: 214,
+            dy: 244, // moved down 30px
             dw: 64,
         },
     ];
@@ -136,37 +136,37 @@ function main() {
     const skinDrawingCoordinates = [
         {
             x: 51,
-            y: 86,
+            y: 116, // moved down 30px from 86
             w: 64,
             h: 256,
         },
         {
             x: 116,
-            y: 86,
+            y: 116, // moved down 30px
             w: 256,
             h: 128,
         },
         {
             x: 180,
-            y: 86,
+            y: 116, // moved down 30px
             w: 128,
             h: 256,
         },
         {
             x: 373,
-            y: 86,
+            y: 116, // moved down 30px
             w: 256,
             h: 128,
         },
         {
             x: 437,
-            y: 86,
+            y: 116, // moved down 30px
             w: 128,
             h: 256,
         },
         {
             x: 630,
-            y: 86,
+            y: 116, // moved down 30px
             w: 64,
             h: 256,
         },
@@ -179,12 +179,6 @@ function main() {
         showcaseTemplate.src = 'showcaseTemplate.png';
         showcaseTemplate.onload = () => ctx.drawImage(showcaseTemplate, 0, 0);
 
-        // global offsets: change these two numbers to move all outputs
-        const offsetX = 10; // left margin
-        const offsetY = 48; // top margin
-        // extra vertical shift applied only to pants and skin
-        const pantsAndSkinOffsetY = 30;
-
         function generateShowcase() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.drawImage(showcaseTemplate, 0, 0);
@@ -194,20 +188,20 @@ function main() {
                 ctx.fillStyle = skinColor;
                 for (const coordinates of skinDrawingCoordinates) {
                     const { x, y, w, h } = coordinates;
-                    ctx.fillRect(x + offsetX, y + offsetY + pantsAndSkinOffsetY, w, h);
+                    ctx.fillRect(x, y, w, h);
                 }
             }
 
             if (pants) {
                 for (const coordinates of pantsDrawingCoordinates) {
                     const { sx, sy, sw, sh = 128, dx, dy, dw, dh = 128 } = coordinates;
-                    ctx.drawImage(pants, sx, sy, sw, sh, dx + offsetX, dy + offsetY + pantsAndSkinOffsetY, dw, dh);
+                    ctx.drawImage(pants, sx, sy, sw, sh, dx, dy, dw, dh);
                 }
             }
             if (shirt) {
                 for (const coordinates of shirtDrawingCoordinates) {
                     const { sx, sy, sw, sh = 128, dx, dy, dw, dh = 128 } = coordinates;
-                    ctx.drawImage(shirt, sx, sy, sw, sh, dx + offsetX, dy + offsetY, dw, dh);
+                    ctx.drawImage(shirt, sx, sy, sw, sh, dx, dy, dw, dh);
                 }
             }
         }
