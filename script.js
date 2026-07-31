@@ -72,7 +72,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 51,
-            dy: 214, // restored to 214 to match shirt
+            dy: 176, // raised by 38px (214 -> 176)
             dw: 64,
         },
         {
@@ -80,7 +80,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 180,
-            dy: 214, // restored to 214
+            dy: 176, // raised by 38px (214 -> 176)
             dw: 64,
         },
         {
@@ -88,7 +88,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 244,
-            dy: 214, // restored to 214
+            dy: 176, // raised by 38px (214 -> 176)
             dw: 64,
         },
         {
@@ -96,7 +96,7 @@ function main() {
             sy: 74,
             sw: 128,
             dx: 180,
-            dy: 86, // restored to 86 to match shirt
+            dy: 48, // raised by 38px (86 -> 48)
             dw: 128,
         },
         {
@@ -104,7 +104,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 437,
-            dy: 214, // restored to 214
+            dy: 176, // raised by 38px (214 -> 176)
             dw: 64,
         },
         {
@@ -112,7 +112,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 501,
-            dy: 214, // restored to 214
+            dy: 176, // raised by 38px (214 -> 176)
             dw: 64,
         },
         {
@@ -120,7 +120,7 @@ function main() {
             sy: 74,
             sw: 128,
             dx: 437,
-            dy: 86, // restored to 86
+            dy: 48, // raised by 38px (86 -> 48)
             dw: 128,
         },
         {
@@ -128,7 +128,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 630,
-            dy: 214, // restored to 214
+            dy: 176, // raised by 38px (214 -> 176)
             dw: 64,
         },
     ];
@@ -136,37 +136,37 @@ function main() {
     const skinDrawingCoordinates = [
         {
             x: 51,
-            y: 86, // restored to 86 to match shirt
+            y: 48, // raised by 38px (86 -> 48) to match shirt/arms
             w: 64,
             h: 256,
         },
         {
             x: 116,
-            y: 86, // restored to 86
+            y: 48, // raised by 38px
             w: 256,
             h: 128,
         },
         {
             x: 180,
-            y: 86, // restored to 86
+            y: 48, // raised by 38px
             w: 128,
             h: 256,
         },
         {
             x: 373,
-            y: 86, // restored to 86
+            y: 48, // raised by 38px
             w: 256,
             h: 128,
         },
         {
             x: 437,
-            y: 86, // restored to 86
+            y: 48, // raised by 38px
             w: 128,
             h: 256,
         },
         {
             x: 630,
-            y: 86, // restored to 86
+            y: 48, // raised by 38px
             w: 64,
             h: 256,
         },
