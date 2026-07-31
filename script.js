@@ -164,8 +164,9 @@ function main() {
         },
     ];
 
-    // Offsets that can be manually adjusted
-    const Y_OFFSET = 48; // move everything drawn below the template down 48 pixels
+    // Offset for drawing content only (not template)
+    const Y_OFFSET = 48; // move shirt, pants, and skin down 48 pixels
+    const X_OFFSET_DEFAULT = 0;
 
     function createShowcase() {
         const canvas = document.querySelector('canvas');
@@ -194,10 +195,7 @@ function main() {
                 // clear first so we don't leave stale pixels
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-                ctx.save();
-                ctx.translate(settings.xOffset, Y_OFFSET);
-
-                // If the template hasn't loaded yet, draw a neutral background (not black)
+                // Draw template at normal position (not offset)
                 if (showcaseTemplate.complete && showcaseTemplate.naturalWidth !== 0) {
                     ctx.drawImage(showcaseTemplate, 0, 0);
                 } else {
@@ -206,6 +204,10 @@ function main() {
                 }
 
                 const { shirt, pants, colorValue: skinColor } = settings;
+
+                // Save state before translating for shirt/pants/skin
+                ctx.save();
+                ctx.translate(settings.xOffset, Y_OFFSET);
 
                 // DRAWS SKIN COLOR (use a safe default if no color chosen)
                 if (shirt || pants) {
@@ -261,7 +263,7 @@ function main() {
             shirt: undefined,
             pants: undefined,
             colorValue: '',
-            xOffset: 0,
+            xOffset: X_OFFSET_DEFAULT,
             setSettingFile,
         };
     }
