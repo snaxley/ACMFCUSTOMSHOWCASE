@@ -4,56 +4,56 @@ function main() {
             sx: 151,
             sy: 355,
             sw: 64,
-            dx: 10, // right arm
+            dx: 31,
             dw: 64,
         },
         {
             sx: 231,
             sy: 74,
             sw: 128,
-            dx: 92, // front right arm
+            dx: 160,
             dw: 128,
         },
         {
             sx: 217,
             sy: 355,
             sw: 64,
-            dx: 156, //front
+            dx: 96,
             dw: 64,
         },
         {
             sx: 308,
             sy: 355,
             sw: 64,
-            dx: 286, // front left arm
+            dx: 288,
             dw: 64,
         },
         {
             sx: 440,
             sy: 355,
             sw: 64,
-            dx: 358, // back right arm i think
+            dx: 353,
             dw: 64,
         },
         {
             sx: 427,
             sy: 74,
             sw: 128,
-            dx: 422,// back
+            dx: 417,
             dw: 128,
         },
         {
             sx: 85,
             sy: 355,
             sw: 64,
-            dx: 550, // back left arm
+            dx: 545,
             dw: 64,
         },
         {
             sx: 374,
             sy: 355,
             sw: 64,
-            dx: 632, // left arm
+            dx: 610,
             dw: 64,
         },
     ];
@@ -63,7 +63,7 @@ function main() {
             sx: 151,
             sy: 355,
             sw: 64,
-            dx: 10, // right leg
+            dx: 31,
             dy: 146,
             dw: 64,
         },
@@ -71,7 +71,7 @@ function main() {
             sx: 217,
             sy: 355,
             sw: 64,
-            dx: 156, // right front
+            dx: 160,
             dy: 146,
             dw: 64,
         },
@@ -79,7 +79,7 @@ function main() {
             sx: 308,
             sy: 355,
             sw: 64,
-            dx: 156, // left front
+            dx: 224,
             dy: 146,
             dw: 64,
         },
@@ -87,7 +87,7 @@ function main() {
             sx: 231,
             sy: 74,
             sw: 128,
-            dx: 156, // left front?..
+            dx: 160,
             dy: 18,
             dw: 128,
         },
@@ -95,15 +95,15 @@ function main() {
             sx: 440,
             sy: 355,
             sw: 64,
-            dx: 358, // back right
-            dy: 146, 
+            dx: 417,
+            dy: 146,
             dw: 64,
         },
         {
             sx: 85,
             sy: 355,
             sw: 64,
-            dx: 358, // back 
+            dx: 481,
             dy: 146,
             dw: 64,
         },
@@ -111,7 +111,7 @@ function main() {
             sx: 427,
             sy: 74,
             sw: 128,
-            dx: 358, // back left?.. 
+            dx: 417,
             dy: 18,
             dw: 128,
         },
@@ -119,7 +119,7 @@ function main() {
             sx: 374,
             sy: 355,
             sw: 64,
-            dx: 632, // left
+            dx: 610,
             dy: 146,
             dw: 64,
         },
