@@ -64,7 +64,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 31,
-            dy: 146,
+            dy: 194,
             dw: 64,
         },
         {
@@ -72,7 +72,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 160,
-            dy: 146,
+            dy: 194,
             dw: 64,
         },
         {
@@ -80,7 +80,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 224,
-            dy: 146,
+            dy: 194,
             dw: 64,
         },
         {
@@ -88,7 +88,7 @@ function main() {
             sy: 74,
             sw: 128,
             dx: 160,
-            dy: 18,
+            dy: 66,
             dw: 128,
         },
         {
@@ -96,7 +96,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 417,
-            dy: 146,
+            dy: 194,
             dw: 64,
         },
         {
@@ -104,7 +104,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 481,
-            dy: 146,
+            dy: 194,
             dw: 64,
         },
         {
@@ -112,7 +112,7 @@ function main() {
             sy: 74,
             sw: 128,
             dx: 417,
-            dy: 18,
+            dy: 66,
             dw: 128,
         },
         {
@@ -120,7 +120,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 610,
-            dy: 146,
+            dy: 194,
             dw: 64,
         },
     ];
@@ -128,37 +128,37 @@ function main() {
     const skinDrawingCoordinates = [
         {
             x: 31,
-            y: 18,
+            y: 66,
             w: 64,
             h: 256,
         },
         {
             x: 96,
-            y: 18,
+            y: 66,
             w: 256,
             h: 128,
         },
         {
             x: 160,
-            y: 18,
+            y: 66,
             w: 128,
             h: 256,
         },
         {
             x: 353,
-            y: 18,
+            y: 66,
             w: 256,
             h: 128,
         },
         {
             x: 417,
-            y: 18,
+            y: 66,
             w: 128,
             h: 256,
         },
         {
             x: 610,
-            y: 18,
+            y: 66,
             w: 64,
             h: 256,
         },
@@ -192,7 +192,7 @@ function main() {
             }
             if (shirt) {
                 for (const coordinates of shirtDrawingCoordinates) {
-                    const { sx, sy, sw, sh = 128, dx, dy = 18, dw, dh = 128 } = coordinates;
+                    const { sx, sy, sw, sh = 128, dx, dy = 66, dw, dh = 128 } = coordinates;
                     ctx.drawImage(shirt, sx, sy, sw, sh, dx, dy, dw, dh);
                 }
             }
