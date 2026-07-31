@@ -1,30 +1,30 @@
 function main() {
-    // SHIRTS: Base Y position shifted from 18px down to 48px down.
-    // You can now freely change any "dx" to adjust horizontal alignment independently.
+    // SHIRTS: Shifted down 30 pixels (Baseline dy is now 48). 
+    // You can now freely change any "dx" to push pieces left or right without structural breaks!
     const shirtDrawingCoordinates = [
-        { sx: 151, sy: 355, sw: 64,  dx: 31,  dw: 64,  dy: 48 },
-        { sx: 231, sy: 74,  sw: 128, dx: 160, dw: 128, dy: 48 },
-        { sx: 217, sy: 355, sw: 64,  dx: 96,  dw: 64,  dy: 48 },
-        { sx: 308, sy: 355, sw: 64,  dx: 288, dw: 64,  dy: 48 },
-        { sx: 440, sy: 355, sw: 64,  dx: 353, dw: 64,  dy: 48 },
-        { sx: 427, sy: 74,  sw: 128, dx: 417, dw: 128, dy: 48 },
-        { sx: 85,  sy: 355, sw: 64,  dx: 545, dw: 64,  dy: 48 },
-        { sx: 374, sy: 355, sw: 64,  dx: 610, dw: 64,  dy: 48 }
+        { sx: 151, sy: 355, sw: 64,  dw: 64,  dx: 31,  dy: 48 },  // Right Arm Side 1
+        { sx: 231, sy: 74,  sw: 128, dw: 128, dx: 160, dy: 48 },  // Torso Front
+        { sx: 217, sy: 355, sw: 64,  dw: 64,  dx: 96,  dy: 48 },  // Right Arm Side 2
+        { sx: 308, sy: 355, sw: 64,  dw: 64,  dx: 288, dy: 48 },  // Left Arm Side 1
+        { sx: 440, sy: 355, sw: 64,  dw: 64,  dx: 353, dy: 48 },  // Left Arm Side 2
+        { sx: 427, sy: 74,  sw: 128, dw: 128, dx: 417, dy: 48 },  // Torso Back
+        { sx: 85,  sy: 355, sw: 64,  dw: 64,  dx: 545, dy: 48 },  // R-Arm Outer
+        { sx: 374, sy: 355, sw: 64,  dw: 64,  dx: 610, dy: 48 }   // L-Arm Outer
     ];
 
-    // PANTS: Every piece shifted down by 30px to perfectly match the shirt adjustments.
+    // PANTS: Shifted down 30 pixels to match the exact spacing of the torso pieces above.
     const pantsDrawingCoordinates = [
-        { sx: 151, sy: 355, sw: 64,  dx: 31,  dw: 64,  dy: 176 }, // 146 + 30
-        { sx: 217, sy: 355, sw: 64,  dx: 160, dw: 64,  dy: 176 },
-        { sx: 308, sy: 355, sw: 64,  dx: 224, dw: 64,  dy: 176 },
-        { sx: 231, sy: 74,  sw: 128, dx: 160, dw: 128, dy: 48  }, // 18 + 30
-        { sx: 440, sy: 355, sw: 64,  dx: 417, dw: 64,  dy: 176 },
-        { sx: 85,  sy: 355, sw: 64,  dx: 481, dw: 64,  dy: 176 },
-        { sx: 427, sy: 74,  sw: 128, dx: 417, dw: 128, dy: 48  },
-        { sx: 374, sy: 355, sw: 64,  dx: 610, dw: 64,  dy: 176 }
+        { sx: 151, sy: 355, sw: 64,  dw: 64,  dx: 31,  dy: 176 }, // Right Leg (146 + 30)
+        { sx: 217, sy: 355, sw: 64,  dw: 64,  dx: 160, dy: 176 }, // Leg Front
+        { sx: 308, sy: 355, sw: 64,  dw: 64,  dx: 224, dy: 176 }, // Leg Back
+        { sx: 231, sy: 74,  sw: 128, dw: 128, dx: 160, dy: 48  }, // Hip/Pelvis Front (18 + 30)
+        { sx: 440, sy: 355, sw: 64,  dw: 64,  dx: 417, dy: 176 }, // Leg Side
+        { sx: 85,  sy: 355, sw: 64,  dw: 64,  dx: 481, dy: 176 }, // Leg Outer
+        { sx: 427, sy: 74,  sw: 128, dw: 128, dx: 417, dy: 48  }, // Hip/Pelvis Back (18 + 30)
+        { sx: 374, sy: 355, sw: 64,  dw: 64,  dx: 610, dy: 176 }  // Leg Outer 2
     ];
 
-    // SKIN BACKGROUND: Y limits adjusted down to 48px to match the layered clothes.
+    // SKIN BACKGROUND: Shifted down to match the new 48px clothes rendering limits.
     const skinDrawingCoordinates = [
         { x: 31,  y: 48, w: 64,  h: 256 },
         { x: 96,  y: 48, w: 256, h: 128 },
@@ -46,15 +46,15 @@ function main() {
             ctx.drawImage(showcaseTemplate, 0, 0);
             const { shirt, pants, colorValue: skinColor } = settings;
             
-            // 1. DRAWS SKIN COLOR
+            // 1. DRAWS SKIN BACKGROUND
             if (shirt || pants) {
-                ctx.fillStyle = skinColor;
+                ctx.fillStyle = skinColor || 'transparent';
                 for (const coordinates of skinDrawingCoordinates) {
                     ctx.fillRect(coordinates.x, coordinates.y, coordinates.w, coordinates.h);
                 }
             }
 
-            // 2. DRAWS PANTS (Direct references resolve code freezes)
+            // 2. DRAWS PANTS (Direct references fix layout freezing bugs)
             if (pants) {
                 for (const coord of pantsDrawingCoordinates) {
                     ctx.drawImage(
@@ -71,7 +71,7 @@ function main() {
                 }
             }
             
-            // 3. DRAWS SHIRT (Direct references resolve code freezes)
+            // 3. DRAWS SHIRTS (Direct references fix layout freezing bugs)
             if (shirt) {
                 for (const coord of shirtDrawingCoordinates) {
                     ctx.drawImage(
