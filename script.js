@@ -164,8 +164,8 @@ function main() {
         },
     ];
 
-    // A single place to tweak the vertical offset; declared BEFORE use to avoid TDZ errors
-    const Y_OFFSET = 44; // move everything drawn below the template down 44 pixels
+    // Offsets that can be manually adjusted
+    const Y_OFFSET = 48; // move everything drawn below the template down 48 pixels
 
     function createShowcase() {
         const canvas = document.querySelector('canvas');
@@ -195,7 +195,7 @@ function main() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
 
                 ctx.save();
-                ctx.translate(0, Y_OFFSET);
+                ctx.translate(settings.xOffset, Y_OFFSET);
 
                 // If the template hasn't loaded yet, draw a neutral background (not black)
                 if (showcaseTemplate.complete && showcaseTemplate.naturalWidth !== 0) {
@@ -261,6 +261,7 @@ function main() {
             shirt: undefined,
             pants: undefined,
             colorValue: '',
+            xOffset: 0,
             setSettingFile,
         };
     }
@@ -303,6 +304,16 @@ function main() {
         };
     }
 
+    function listenForXOffsetInput() {
+        const xOffsetInput = document.querySelector('[xOffsetInput]');
+        if (xOffsetInput) {
+            xOffsetInput.addEventListener('input', () => {
+                settings.xOffset = parseInt(xOffsetInput.value, 10) || 0;
+                showcase.generateShowcase();
+            });
+        }
+    }
+
     function listenForGenerate() {
         const generateButton = document.querySelector('[generateButton]');
         generateButton.addEventListener('click', () => showcase.generateShowcase());
@@ -311,6 +322,7 @@ function main() {
     function listenForInputs() {
         listenForFileUpload();
         listenForColorInput();
+        listenForXOffsetInput();
         listenForGenerate();
     }
 
