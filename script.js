@@ -4,56 +4,64 @@ function main() {
             sx: 151,
             sy: 355,
             sw: 64,
-            dx: 31,
+            dx: 10,
+            dy: 48,
             dw: 64,
         },
         {
             sx: 231,
             sy: 74,
             sw: 128,
-            dx: 160,
+            dx: 92,
+            dy: 48,
             dw: 128,
         },
         {
             sx: 217,
             sy: 355,
             sw: 64,
-            dx: 96,
+            dx: 156,
+            dy: 48,
             dw: 64,
         },
         {
             sx: 308,
             sy: 355,
             sw: 64,
-            dx: 288,
+            dx: 286,
+            dy: 48,
             dw: 64,
         },
         {
             sx: 440,
             sy: 355,
             sw: 64,
-            dx: 353,
+            dx: 358,
+            dy: 48,
             dw: 64,
         },
         {
             sx: 427,
             sy: 74,
             sw: 128,
-            dx: 417,
+            dx: 422,
+            dy: 48,
             dw: 128,
         },
         {
             sx: 85,
             sy: 355,
             sw: 64,
-            dx: 545,
+            dx: 550,
+            dy: 48,
             dw: 64,
         },
         {
             sx: 374,
             sy: 355,
             sw: 64,
-            dx: 610,
+            dx: 632,
+            dy: 48,
             dw: 64,
         },
     ];
@@ -63,102 +71,102 @@ function main() {
             sx: 151,
             sy: 355,
             sw: 64,
-            dx: 31,
-            dy: 146,
+            dx: 51,
+            dy: 214,
             dw: 64,
         },
         {
             sx: 217,
             sy: 355,
             sw: 64,
-            dx: 160,
-            dy: 146,
+            dx: 180,
+            dy: 214,
             dw: 64,
         },
         {
             sx: 308,
             sy: 355,
             sw: 64,
-            dx: 224,
-            dy: 146,
+            dx: 244,
+            dy: 214,
             dw: 64,
         },
         {
             sx: 231,
             sy: 74,
             sw: 128,
-            dx: 160,
-            dy: 18,
+            dx: 180,
+            dy: 86,
             dw: 128,
         },
         {
             sx: 440,
             sy: 355,
             sw: 64,
-            dx: 417,
-            dy: 146,
+            dx: 437,
+            dy: 214,
             dw: 64,
         },
         {
             sx: 85,
             sy: 355,
             sw: 64,
-            dx: 481,
-            dy: 146,
+            dx: 501,
+            dy: 214,
             dw: 64,
         },
         {
             sx: 427,
             sy: 74,
             sw: 128,
-            dx: 417,
-            dy: 18,
+            dx: 437,
+            dy: 86,
             dw: 128,
         },
         {
             sx: 374,
             sy: 355,
             sw: 64,
-            dx: 610,
-            dy: 146,
+            dx: 630,
+            dy: 214,
             dw: 64,
         },
     ];
 
     const skinDrawingCoordinates = [
         {
-            x: 31,
-            y: 18,
+            x: 51,
+            y: 86,
             w: 64,
             h: 256,
         },
         {
-            x: 96,
-            y: 18,
+            x: 116,
+            y: 86,
             w: 256,
             h: 128,
         },
         {
-            x: 160,
-            y: 18,
+            x: 180,
+            y: 86,
             w: 128,
             h: 256,
         },
         {
-            x: 353,
-            y: 18,
+            x: 373,
+            y: 86,
             w: 256,
             h: 128,
         },
         {
-            x: 417,
-            y: 18,
+            x: 437,
+            y: 86,
             w: 128,
             h: 256,
         },
         {
-            x: 610,
-            y: 18,
+            x: 630,
+            y: 86,
             w: 64,
             h: 256,
         },
@@ -171,6 +179,12 @@ function main() {
         showcaseTemplate.src = 'showcaseTemplate.png';
         showcaseTemplate.onload = () => ctx.drawImage(showcaseTemplate, 0, 0);
 
+        // global offsets: change these two numbers to move all outputs
+        const offsetX = 10; // left margin
+        const offsetY = 48; // top margin
+        // extra vertical shift applied only to pants and skin
+        const pantsAndSkinOffsetY = 30;
+
         function generateShowcase() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.drawImage(showcaseTemplate, 0, 0);
@@ -180,20 +194,20 @@ function main() {
                 ctx.fillStyle = skinColor;
                 for (const coordinates of skinDrawingCoordinates) {
                     const { x, y, w, h } = coordinates;
-                    ctx.fillRect(x, y, w, h);
+                    ctx.fillRect(x + offsetX, y + offsetY + pantsAndSkinOffsetY, w, h);
                 }
             }
 
             if (pants) {
                 for (const coordinates of pantsDrawingCoordinates) {
-                    const { sx, sy, sw, sh = 128, dx, dy + 30, dw, dh = 128 } = coordinates;
-                    ctx.drawImage(pants, sx, sy, sw, sh, dx, dy, dw, dh);
+                    const { sx, sy, sw, sh = 128, dx, dy, dw, dh = 128 } = coordinates;
+                    ctx.drawImage(pants, sx, sy, sw, sh, dx + offsetX, dy + offsetY + pantsAndSkinOffsetY, dw, dh);
                 }
             }
             if (shirt) {
                 for (const coordinates of shirtDrawingCoordinates) {
-                    const { sx, sy, sw, sh = 128, dx, dy = 48, dw, dh = 128 } = coordinates;
-                    ctx.drawImage(shirt, sx, sy, sw, sh, dx, dy, dw, dh);
+                    const { sx, sy, sw, sh = 128, dx, dy, dw, dh = 128 } = coordinates;
+                    ctx.drawImage(shirt, sx, sy, sw, sh, dx + offsetX, dy + offsetY, dw, dh);
                 }
             }
         }
