@@ -3,28 +3,171 @@ function main() {
     // You can now freely change any "dx" to push pieces left or right without structural breaks!
     // SHIRTS: Re-mapped to drop perfectly into the 4 presentation boxes (RIGHT, FRONT, BACK, LEFT)
 // SHIRTS: Kept your perfect placement but cleaned up sizes
-const shirtDrawingCoordinates = [
-    { sx: 151, sy: 355, sw: 64,  dw: 64,  dx: 45,  dy: 82  }, // RIGHT
-    { sx: 231, sy: 74,  sw: 128, dw: 128, dx: 172, dy: 82  }, // FRONT
-    { sx: 427, sy: 74,  sw: 128, dw: 128, dx: 404, dy: 82  }, // BACK
-    { sx: 85,  sy: 355, sw: 64,  dw: 64,  dx: 595, dy: 82  }  // LEFT
-];
+function main() {
+    const shirtDrawingCoordinates = [
+        {
+            sx: 151,
+            sy: 355,
+            sw: 64,
+            dx: 31,
+            dw: 64,
+        },
+        {
+            sx: 231,
+            sy: 74,
+            sw: 128,
+            dx: 160,
+            dw: 128,
+        },
+        {
+            sx: 217,
+            sy: 355,
+            sw: 64,
+            dx: 96,
+            dw: 64,
+        },
+        {
+            sx: 308,
+            sy: 355,
+            sw: 64,
+            dx: 288,
+            dw: 64,
+        },
+        {
+            sx: 440,
+            sy: 355,
+            sw: 64,
+            dx: 353,
+            dw: 64,
+        },
+        {
+            sx: 427,
+            sy: 74,
+            sw: 128,
+            dx: 417,
+            dw: 128,
+        },
+        {
+            sx: 85,
+            sy: 355,
+            sw: 64,
+            dx: 545,
+            dw: 64,
+        },
+        {
+            sx: 374,
+            sy: 355,
+            sw: 64,
+            dx: 610,
+            dw: 64,
+        },
+    ];
 
-// PANTS: FIXED - Changed dw to 64 and centered dx under the shirt blocks
-const pantsDrawingCoordinates = [
-    { sx: 151, sy: 355, sw: 64,  dw: 64,  dx: 45,  dy: 146 }, // RIGHT leg
-    { sx: 217, sy: 355, sw: 64,  dw: 64,  dx: 204, dy: 146 }, // FRONT leg (Centered: 172 + 32)
-    { sx: 308, sy: 355, sw: 64,  dw: 64,  dx: 436, dy: 146 }, // BACK leg  (Centered: 404 + 32)
-    { sx: 374, sy: 355, sw: 64,  dw: 64,  dx: 595, dy: 146 }  // LEFT leg
-];
+    const pantsDrawingCoordinates = [
+        {
+            sx: 151,
+            sy: 355,
+            sw: 64,
+            dx: 31,
+            dy: 146,
+            dw: 64,
+        },
+        {
+            sx: 217,
+            sy: 355,
+            sw: 64,
+            dx: 160,
+            dy: 146,
+            dw: 64,
+        },
+        {
+            sx: 308,
+            sy: 355,
+            sw: 64,
+            dx: 224,
+            dy: 146,
+            dw: 64,
+        },
+        {
+            sx: 231,
+            sy: 74,
+            sw: 128,
+            dx: 160,
+            dy: 18,
+            dw: 128,
+        },
+        {
+            sx: 440,
+            sy: 355,
+            sw: 64,
+            dx: 417,
+            dy: 146,
+            dw: 64,
+        },
+        {
+            sx: 85,
+            sy: 355,
+            sw: 64,
+            dx: 481,
+            dy: 146,
+            dw: 64,
+        },
+        {
+            sx: 427,
+            sy: 74,
+            sw: 128,
+            dx: 417,
+            dy: 18,
+            dw: 128,
+        },
+        {
+            sx: 374,
+            sy: 355,
+            sw: 64,
+            dx: 610,
+            dy: 146,
+            dw: 64,
+        },
+    ];
 
-// SKIN BACKGROUND: Adjusted to sit perfectly under the crisp new layout bounding frames
-const skinDrawingCoordinates = [
-    { x: 45,  y: 82, w: 64,  h: 192 }, // RIGHT
-    { x: 172, y: 82, w: 128, h: 192 }, // FRONT
-    { x: 404, y: 82, w: 128, h: 192 }, // BACK
-    { x: 595, y: 82, w: 64,  h: 192 }  // LEFT
-];
+    const skinDrawingCoordinates = [
+        {
+            x: 31,
+            y: 18,
+            w: 64,
+            h: 256,
+        },
+        {
+            x: 96,
+            y: 18,
+            w: 256,
+            h: 128,
+        },
+        {
+            x: 160,
+            y: 18,
+            w: 128,
+            h: 256,
+        },
+        {
+            x: 353,
+            y: 18,
+            w: 256,
+            h: 128,
+        },
+        {
+            x: 417,
+            y: 18,
+            w: 128,
+            h: 256,
+        },
+        {
+            x: 610,
+            y: 18,
+            w: 64,
+            h: 256,
+        },
+    ];
 
 
 
