@@ -3,7 +3,7 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: "Source Code Pro", sans-serif;
-	color: #e04c4c;
+	color: #E04C4C;
 }
 
 body, html {
@@ -27,12 +27,12 @@ input[type="file"] {
 	grid-column: 1 / span 3;
 	grid-row: 1;
 	text-align: center;
-	text-shadow: 0px 0px 5px #e04c4c;
+	text-shadow: 0px 0px 5px #E04C4C;
 }
 
 .heading__image {
 	max-width: 40%;
-	filter: drop-shadow(0px 0px 100px #e04c4c);
+	filter: drop-shadow(0px 0px 100px #E04C4C;
 }
 
 .heading__title {
@@ -47,7 +47,7 @@ input[type="file"] {
 canvas {
 	grid-column: 2;
 	grid-row: 2;
-	border: 1px solid #e04c4c;
+	border: 1px solid #E04C4C;
 }
 
 .note {
@@ -73,7 +73,7 @@ canvas {
 	padding-inline: 0.5rem;
 	padding-block: 0.25rem;
 	background-color: transparent;
-	border: 1px solid #e04c4c;
+	border: 1px solid #E04C4C;
 	cursor: pointer;
 }
 
@@ -87,7 +87,7 @@ canvas {
 }
 
 .setting__button:hover {
-	background-color: #e04c4c;
+	background-color: #E04C4C;
 	color: black;
 }
 
@@ -96,7 +96,7 @@ canvas {
 	width: 100%;
 	background-color: transparent;
 	border-style: unset;
-	border-bottom: 1px solid #e04c4c;
+	border-bottom: 1px solid #E04C4C;
 }
 
 .setting__text-input:focus {
