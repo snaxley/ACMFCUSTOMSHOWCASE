@@ -28,7 +28,7 @@ function main() {
             sx: 308,
             sy: 355,
             sw: 64,
-            dx: 286,
+            dx: 284,
             dy: 48,
             dw: 64,
         },
