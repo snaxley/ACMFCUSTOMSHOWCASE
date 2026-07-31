@@ -6,6 +6,7 @@ function main() {
             sw: 64,
             dx: 31,
             dw: 64,
+            dy: 50,
         },
         {
             sx: 231,
@@ -13,6 +14,7 @@ function main() {
             sw: 128,
             dx: 160,
             dw: 128,
+            dy: 50,
         },
         {
             sx: 217,
@@ -20,6 +22,7 @@ function main() {
             sw: 64,
             dx: 96,
             dw: 64,
+            dy: 50,
         },
         {
             sx: 308,
@@ -27,6 +30,7 @@ function main() {
             sw: 64,
             dx: 288,
             dw: 64,
+            dy: 50,
         },
         {
             sx: 440,
@@ -34,6 +38,7 @@ function main() {
             sw: 64,
             dx: 353,
             dw: 64,
+            dy: 50,
         },
         {
             sx: 427,
@@ -41,6 +46,7 @@ function main() {
             sw: 128,
             dx: 417,
             dw: 128,
+            dy: 50,
         },
         {
             sx: 85,
@@ -48,6 +54,7 @@ function main() {
             sw: 64,
             dx: 545,
             dw: 64,
+            dy: 50,
         },
         {
             sx: 374,
@@ -55,6 +62,7 @@ function main() {
             sw: 64,
             dx: 610,
             dw: 64,
+            dy: 50,
         },
     ];
 
