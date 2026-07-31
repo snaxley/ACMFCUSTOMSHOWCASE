@@ -5,6 +5,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 30,
+            dy: 48,
             dw: 64,
         },
         {
@@ -12,6 +13,7 @@ function main() {
             sy: 74,
             sw: 128,
             dx: 112,
+            dy: 48,
             dw: 128,
         },
         {
@@ -19,6 +21,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 176,
+            dy: 48,
             dw: 64,
         },
         {
@@ -26,6 +29,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 306,
+            dy: 48,
             dw: 64,
         },
         {
@@ -33,6 +37,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 378,
+            dy: 48,
             dw: 64,
         },
         {
@@ -40,6 +45,7 @@ function main() {
             sy: 74,
             sw: 128,
             dx: 442,
+            dy: 48,
             dw: 128,
         },
         {
@@ -47,6 +53,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 570,
+            dy: 48,
             dw: 64,
         },
         {
@@ -54,6 +61,7 @@ function main() {
             sy: 355,
             sw: 64,
             dx: 652,
+            dy: 48,
             dw: 64,
         },
     ];
@@ -192,7 +200,7 @@ function main() {
             }
             if (shirt) {
                 for (const coordinates of shirtDrawingCoordinates) {
-                    const { sx, sy, sw, sh = 128, dx, dy = 68, dw, dh = 128 } = coordinates;
+                    const { sx, sy, sw, sh = 128, dx, dy, dw, dh = 128 } = coordinates;
                     ctx.drawImage(shirt, sx, sy, sw, sh, dx, dy, dw, dh);
                 }
             }
