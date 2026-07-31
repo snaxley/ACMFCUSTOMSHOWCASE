@@ -71,7 +71,7 @@ function main() {
             sx: 151,
             sy: 355,
             sw: 64,
-            dx: 51,
+            dx: 10,
             dy: 176, // raised by 38px (214 -> 176)
             dw: 64,
         },
@@ -79,7 +79,7 @@ function main() {
             sx: 217,
             sy: 355,
             sw: 64,
-            dx: 180,
+            dx: 156,
             dy: 176, // raised by 38px (214 -> 176)
             dw: 64,
         },
@@ -87,7 +87,7 @@ function main() {
             sx: 308,
             sy: 355,
             sw: 64,
-            dx: 244,
+            dx: 220,
             dy: 176, // raised by 38px (214 -> 176)
             dw: 64,
         },
@@ -95,7 +95,7 @@ function main() {
             sx: 231,
             sy: 74,
             sw: 128,
-            dx: 180,
+            dx: 156,
             dy: 48, // raised by 38px (86 -> 48)
             dw: 128,
         },
@@ -103,7 +103,7 @@ function main() {
             sx: 440,
             sy: 355,
             sw: 64,
-            dx: 437,
+            dx: 422,
             dy: 176, // raised by 38px (214 -> 176)
             dw: 64,
         },
@@ -111,7 +111,7 @@ function main() {
             sx: 85,
             sy: 355,
             sw: 64,
-            dx: 501,
+            dx: 486,
             dy: 176, // raised by 38px (214 -> 176)
             dw: 64,
         },
@@ -119,7 +119,7 @@ function main() {
             sx: 427,
             sy: 74,
             sw: 128,
-            dx: 437,
+            dx: 422,
             dy: 48, // raised by 38px (86 -> 48)
             dw: 128,
         },
@@ -127,7 +127,7 @@ function main() {
             sx: 374,
             sy: 355,
             sw: 64,
-            dx: 630,
+            dx: 632,
             dy: 176, // raised by 38px (214 -> 176)
             dw: 64,
         },
@@ -135,37 +135,37 @@ function main() {
 
     const skinDrawingCoordinates = [
         {
-            x: 51,
+            x: 10,
             y: 48, // raised by 38px (86 -> 48) to match shirt/arms
             w: 64,
             h: 256,
         },
         {
-            x: 116,
+            x: 156,
             y: 48, // raised by 38px
             w: 256,
             h: 128,
         },
         {
-            x: 180,
+            x: 220,
             y: 48, // raised by 38px
             w: 128,
             h: 256,
         },
         {
-            x: 373,
+            x: 422,
             y: 48, // raised by 38px
             w: 256,
             h: 128,
         },
         {
-            x: 437,
+            x: 486,
             y: 48, // raised by 38px
             w: 128,
             h: 256,
         },
         {
-            x: 630,
+            x: 632,
             y: 48, // raised by 38px
             w: 64,
             h: 256,
