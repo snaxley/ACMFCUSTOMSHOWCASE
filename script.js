@@ -141,7 +141,7 @@ function main() {
             h: 256,
         },
         {
-            x: 96,
+            x: 92,
             y: 48, // raised by 38px
             w: 256,
             h: 128,
